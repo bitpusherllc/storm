@@ -32,11 +32,11 @@ public class RocksDbValueTest {
         String s = "MyTopology123";
         RocksDbValue value = new RocksDbValue(timestamp, s);
         Assert.assertEquals(timestamp, value.getLastTimestamp());
-        Assert.assertEquals(s, value.getMetdataString());
+        Assert.assertEquals(s, value.getMetadataString());
 
         RocksDbValue value2 = new RocksDbValue(value.getRaw());
         Assert.assertEquals(timestamp, value2.getLastTimestamp());
-        Assert.assertEquals(s, value2.getMetdataString());
+        Assert.assertEquals(s, value2.getMetadataString());
 
         int stringId = 0x509;
         RocksDbKey key = new RocksDbKey(KeyType.EXEC_ID_STRING, stringId);

@@ -93,7 +93,7 @@ class RocksDbValue {
      *
      * @return the metadata string
      */
-    String getMetdataString() {
+    String getMetadataString() {
         if (this.value.length < MIN_METADATA_VALUE_SIZE) {
             throw new RuntimeException("RocksDB value is too small to be a metadata string!");
         }

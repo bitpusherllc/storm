@@ -68,4 +68,12 @@ public class ConsolePreparableReporter implements PreparableReporter {
             throw new IllegalStateException("Attempt to stop without preparing " + getClass().getSimpleName());
         }
     }
+
+    @Override
+    public void close() {
+        if (reporter != null) {
+            LOG.debug("Closing...");
+            reporter.close();
+        }
+    }
 }

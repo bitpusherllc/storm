@@ -72,5 +72,12 @@ public class CsvPreparableReporter implements PreparableReporter {
         }
     }
 
+    @Override
+    public void close() {
+        if (reporter != null) {
+            LOG.debug("Closing...");
+            reporter.close();
+        }
+    }
 }
 

@@ -289,12 +289,12 @@ public class RocksDbStore implements MetricStore, AutoCloseable {
     }
 
     // scans the database to look for a metadata string and returns the metadata info
-    StringMetadata rocksDbGetStringMetadata(KeyType type, String s) {
+    StringMetadata rocksDbGetStringMetadata(KeyType type, String s) throws MetricException {
         RocksDbKey firstKey = RocksDbKey.getInitialKey(type);
         RocksDbKey lastKey = RocksDbKey.getLastKey(type);
         final AtomicReference<StringMetadata> reference = new AtomicReference<>();
         scanRange(firstKey, lastKey, (key, value) -> {
-            if (s.equals(value.getMetdataString())) {
+            if (s.equals(value.getMetadataString())) {
                 reference.set(value.getStringMetadata(key));
                 return false;
             } else {
@@ -305,7 +305,7 @@ public class RocksDbStore implements MetricStore, AutoCloseable {
     }
 
     // scans from key start to the key before end, calling back until callback indicates not to process further
-    void scanRange(RocksDbKey start, RocksDbKey end, RocksDbScanCallback fn) {
+    void scanRange(RocksDbKey start, RocksDbKey end, RocksDbScanCallback fn) throws MetricException {
         try (ReadOptions ro = new ReadOptions()) {
             ro.setTotalOrderSeek(true);
             RocksIterator iterator = db.newIterator(ro);
@@ -549,7 +549,7 @@ public class RocksDbStore implements MetricStore, AutoCloseable {
                 throw new MetricException("Failed to find metadata string for id " + id + " of type " + type);
             }
             RocksDbValue rdbValue = new RocksDbValue(value);
-            s = rdbValue.getMetdataString();
+            s = rdbValue.getMetadataString();
             lookupCache.put(id, s);
             return s;
         } catch (RocksDBException e) {
@@ -566,8 +566,15 @@ public class RocksDbStore implements MetricStore, AutoCloseable {
              WriteOptions writeOps = new WriteOptions()) {
 
             scanRaw(filter, (RocksDbKey key, RocksDbValue value) -> {
-                writeBatch.remove(key.getRaw());
-                return true;
+                try {
+                    writeBatch.remove(key.getRaw());
+                    return true;
+                } catch (RocksDBException e) {
+                    if (this.failureMeter != null) {
+                        this.failureMeter.mark();
+                    }
+                    throw new MetricException("Failed to remove from RocksDb", e);
+                }
             });
 
             if (writeBatch.count() > 0) {
@@ -605,7 +612,14 @@ public class RocksDbStore implements MetricStore, AutoCloseable {
                 // we'll assume the metadata was recently used if still in the cache.
                 if (!readOnlyStringMetadataCache.contains(key.getMetadataStringId())) {
                     if (value.getLastTimestamp() < firstValidTimestamp) {
-                        writeBatch.remove(key.getRaw());
+                        try {
+                            writeBatch.remove(key.getRaw());
+                        } catch (RocksDBException e) {
+                            if (this.failureMeter != null) {
+                                this.failureMeter.mark();
+                            }
+                            throw new MetricException("Failed to remove from RocksDb", e);
+                        }
                     }
                 }
                 return true;
@@ -628,7 +642,7 @@ public class RocksDbStore implements MetricStore, AutoCloseable {
     }
 
     interface RocksDbScanCallback {
-        boolean cb(RocksDbKey key, RocksDbValue val);  // return false to stop scan
+        boolean cb(RocksDbKey key, RocksDbValue val) throws MetricException;  // return false to stop scan
     }
 }
 

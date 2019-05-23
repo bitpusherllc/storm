@@ -13,14 +13,14 @@
 package org.apache.storm.daemon.metrics.reporters;
 
 import com.codahale.metrics.MetricRegistry;
+import com.codahale.metrics.Reporter;
 import java.util.Map;
 
 
-public interface PreparableReporter {
+public interface PreparableReporter extends Reporter {
     void prepare(MetricRegistry metricsRegistry, Map<String, Object> topoConf);
 
     void start();
 
     void stop();
-
 }

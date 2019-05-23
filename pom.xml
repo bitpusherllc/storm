@@ -26,7 +26,7 @@
 
     <groupId>org.apache.storm</groupId>
     <artifactId>storm</artifactId>
-    <version>2.0.0</version>
+    <version>2.0.0-nexia1</version>
     <packaging>pom</packaging>
     <name>Storm</name>
     <description>Distributed and fault-tolerant realtime computation</description>
@@ -242,7 +242,7 @@
     <scm>
         <connection>scm:git:https://git-wip-us.apache.org/repos/asf/storm.git</connection>
         <developerConnection>scm:git:https://git-wip-us.apache.org/repos/asf/storm.git</developerConnection>
-        <tag>v2.0.0</tag>
+        <tag>v2.0.0-nexia1</tag>
         <url>https://git-wip-us.apache.org/repos/asf/storm</url>
     </scm>
 
@@ -264,56 +264,56 @@
         <commons-lang.version>2.6</commons-lang.version>
         <commons-exec.version>1.3</commons-exec.version>
         <commons-collections.version>3.2.2</commons-collections.version>
-        <commons-fileupload.version>1.3.3</commons-fileupload.version>
-        <commons-codec.version>1.11</commons-codec.version>
+        <commons-fileupload.version>1.4</commons-fileupload.version>
+        <commons-codec.version>1.12</commons-codec.version>
         <commons-cli.version>1.4</commons-cli.version>
-        <curator.version>4.2.0</curator.version>
-        <curator-test.version>2.13.0</curator-test.version>
-        <json-simple.version>1.1</json-simple.version>
-        <jetty.version>9.4.14.v20181114</jetty.version>
+        <curator.version>4.2.0-nexia1</curator.version>
+        <curator-test.version>4.2.0-nexia1</curator-test.version>
+        <json-simple.version>1.1.1</json-simple.version>
+        <jetty.version>9.4.18.v20190429</jetty.version>
         <clojure.tools.logging.version>0.2.3</clojure.tools.logging.version>
         <carbonite.version>1.5.0</carbonite.version>
-        <snakeyaml.version>1.11</snakeyaml.version>
-        <httpclient.version>4.5.6</httpclient.version>
-        <jctools.version>2.0.1</jctools.version>
-        <jgrapht.version>0.9.0</jgrapht.version>
-        <guava.version>27.0.1-jre</guava.version>
-        <auto-service.version>1.0-rc4</auto-service.version>
-        <netty.version>4.1.30.Final</netty.version>
+        <snakeyaml.version>1.24</snakeyaml.version>
+        <httpclient.version>4.5.8</httpclient.version>
+        <jctools.version>2.1.2</jctools.version>
+        <jgrapht.version>0.9.2</jgrapht.version>
+        <guava.version>27.1-jre</guava.version>
+        <auto-service.version>1.0-rc5</auto-service.version>
+        <netty.version>4.1.36.Final</netty.version>
         <sysout-over-slf4j.version>1.0.2</sysout-over-slf4j.version>
-        <log4j-over-slf4j.version>1.6.6</log4j-over-slf4j.version>
-        <log4j.version>2.11.1</log4j.version>
-        <slf4j.version>1.7.21</slf4j.version>
-        <metrics.version>3.2.6</metrics.version>
-        <mockito.version>2.19.0</mockito.version>
-        <zookeeper.version>3.4.14</zookeeper.version>
+        <log4j-over-slf4j.version>1.7.26</log4j-over-slf4j.version>
+        <log4j.version>2.11.2</log4j.version>
+        <slf4j.version>1.7.26</slf4j.version>
+        <metrics.version>4.1.0</metrics.version>
+        <mockito.version>2.27.0</mockito.version>
+        <zookeeper.version>3.5.5-nexia1</zookeeper.version>
         <jline.version>0.9.94</jline.version>
         <hive.version>2.3.4</hive.version>
         <hadoop.version>2.8.5</hadoop.version>
         <hdfs.version>${hadoop.version}</hdfs.version>
         <hbase.version>2.1.3</hbase.version>
         <kryo.version>3.0.3</kryo.version>
-        <servlet.version>3.1.0</servlet.version>
-        <joda-time.version>2.3</joda-time.version>
+        <servlet.version>4.0.1</servlet.version>
+        <joda-time.version>2.10.2</joda-time.version>
         <thrift.version>0.12.0</thrift.version>
-        <junit.jupiter.version>5.3.2</junit.jupiter.version>
-        <surefire.version>2.22.1</surefire.version>
-        <awaitility.version>3.1.0</awaitility.version>
-        <hdrhistogram.version>2.1.10</hdrhistogram.version>
+        <junit.jupiter.version>5.4.2</junit.jupiter.version>
+        <surefire.version>2.22.2</surefire.version>
+        <awaitility.version>3.1.6</awaitility.version>
+        <hdrhistogram.version>2.1.11</hdrhistogram.version>
         <hamcrest.version>2.0.0.0</hamcrest.version>
         <cassandra.version>2.1.7</cassandra.version>
         <elasticsearch.version>5.2.2</elasticsearch.version>
-        <calcite.version>1.14.0</calcite.version>
+        <calcite.version>1.19.0</calcite.version>
         <mongodb.version>3.2.0</mongodb.version>
         <solr.version>5.2.1</solr.version>
         <jpmml.version>1.0.22</jpmml.version>
-        <jedis.version>2.9.0</jedis.version>
-        <activemq.version>5.15.8</activemq.version>
+        <jedis.version>2.10.2</jedis.version>
+        <activemq.version>5.15.9</activemq.version>
         <rocketmq.version>4.2.0</rocketmq.version>
 
-        <jackson.version>2.9.8</jackson.version>
+        <jackson.version>2.9.9</jackson.version>
         
-        <storm.kafka.client.version>0.11.0.3</storm.kafka.client.version>
+        <storm.kafka.client.version>1.1.1-nexia7</storm.kafka.client.version>
 
         <!-- Java and clojure build lifecycle test properties are defined here to avoid having to create a default profile -->
         <java.unit.test.exclude.groups>PerformanceTest</java.unit.test.exclude.groups>
@@ -322,15 +322,16 @@
         <skipITs>true</skipITs>
 
         <maven-resolver.version>1.3.3</maven-resolver.version>
-        <maven.version>3.6.0</maven.version>
+        <maven.version>3.6.1</maven.version>
+        <maven.plugin.version>3.6.0</maven.plugin.version>
         <azure-eventhubs.version>0.13.1</azure-eventhubs.version>
-        <jersey.version>2.27</jersey.version>
-        <dropwizard.version>1.3.5</dropwizard.version>
+        <jersey.version>2.28</jersey.version>
+        <dropwizard.version>1.3.11</dropwizard.version>
         <j2html.version>1.0.0</j2html.version>
         <jool.version>0.9.12</jool.version>
-        <caffeine.version>2.3.5</caffeine.version>
-        <jaxb-version>2.3.0</jaxb-version>
-        <rocksdb-version>5.8.6</rocksdb-version>
+        <caffeine.version>2.7.0</caffeine.version>
+        <jaxb-version>2.3.1</jaxb-version>
+        <rocksdb-version>5.18.33</rocksdb-version>
 
         <!-- see intellij profile below... This fixes an annoyance with intellij -->
         <provided.scope>provided</provided.scope>
@@ -683,11 +684,16 @@
     </profiles>
 
     <distributionManagement>
-        <site>
-            <id>storm.maven.website</id>
-            <name>Storm Website</name>
-            <url>file:///tmp/site</url>
-        </site>
+        <repository>
+            <id>central</id>
+            <name>artifactory.nexiabuild.com-releases</name>
+            <url>https://artifactory.nexiabuild.com/artifactory/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>artifactory.nexiabuild.com-snapshots</name>
+            <url>https://artifactory.nexiabuild.com/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
     </distributionManagement>
 
     <dependencyManagement>
@@ -799,6 +805,11 @@
                 </exclusions>
             </dependency>
             <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper-jute</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet.version}</version>
@@ -812,6 +823,11 @@
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
                 <version>${joda-time.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson</groupId>
@@ -965,6 +981,11 @@
                 <version>${netty.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-jmx</artifactId>
+                <version>${metrics.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.dropwizard.metrics</groupId>
@@ -1393,6 +1414,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>

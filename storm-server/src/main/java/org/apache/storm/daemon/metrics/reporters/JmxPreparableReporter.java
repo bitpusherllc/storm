@@ -12,7 +12,7 @@
 
 package org.apache.storm.daemon.metrics.reporters;
 
-import com.codahale.metrics.JmxReporter;
+import com.codahale.metrics.jmx.JmxReporter;
 import com.codahale.metrics.MetricRegistry;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -59,6 +59,14 @@ public class JmxPreparableReporter implements PreparableReporter {
             reporter.stop();
         } else {
             throw new IllegalStateException("Attempt to stop without preparing " + getClass().getSimpleName());
+        }
+    }
+
+    @Override
+    public void close() {
+        if (reporter != null) {
+            LOG.debug("Closing...");
+            reporter.close();
         }
     }
 }
