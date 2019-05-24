@@ -29,6 +29,9 @@ public class MetricStoreConfig {
 
         try {
             String storeClass = (String) conf.get(DaemonConfig.STORM_METRIC_STORE_CLASS);
+            if (storeClass == null) {
+                storeClass = "org.apache.storm.metricstore.rocksdb.RocksDbStore";
+	    }
             MetricStore store = (MetricStore) (Class.forName(storeClass)).newInstance();
             store.prepare(conf, metricsRegistry);
             return store;

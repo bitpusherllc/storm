@@ -271,7 +271,7 @@
         <curator-test.version>4.2.0-nexia1</curator-test.version>
         <json-simple.version>1.1.1</json-simple.version>
         <jetty.version>9.4.18.v20190429</jetty.version>
-        <clojure.tools.logging.version>0.2.3</clojure.tools.logging.version>
+        <clojure.tools.logging.version>0.4.1</clojure.tools.logging.version>
         <carbonite.version>1.5.0</carbonite.version>
         <snakeyaml.version>1.24</snakeyaml.version>
         <httpclient.version>4.5.8</httpclient.version>
@@ -1304,7 +1304,7 @@
                 <plugin>
                     <groupId>com.theoryinpractise</groupId>
                     <artifactId>clojure-maven-plugin</artifactId>
-                    <version>1.7.1</version>
+                    <version>1.8.3</version>
                     <extensions>true</extensions>
                 </plugin>
                 <plugin>

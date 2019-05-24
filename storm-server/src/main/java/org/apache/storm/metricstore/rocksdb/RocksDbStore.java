@@ -329,6 +329,7 @@ public class RocksDbStore implements MetricStore, AutoCloseable {
      */
     @Override
     public void close() {
+        StringMetadataCache.cleanUp();
         metricsWriter.close();
         metricsCleaner.close();
     }
