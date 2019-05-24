@@ -32,12 +32,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.slf4j.version>1.7.6</org.slf4j.version>
-        <jackson.databind.version>2.3.2</jackson.databind.version>
-        <junit.version>4.11</junit.version>
         <guava.version>16.0.1</guava.version>
-        <commons-lang3.version>3.3</commons-lang3.version>
-        <cassandra.driver.core.version>3.1.2</cassandra.driver.core.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <cassandra.driver.core.version>3.7.1</cassandra.driver.core.version>
     </properties>
 
     <developers>
@@ -81,6 +78,20 @@
             <artifactId>cassandra-all</artifactId>
             <version>${cassandra.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-access</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -100,7 +111,6 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${org.slf4j.version}</version>
         </dependency>
 
         <dependency>

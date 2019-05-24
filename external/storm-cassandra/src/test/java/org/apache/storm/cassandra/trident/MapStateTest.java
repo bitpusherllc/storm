@@ -160,6 +160,7 @@ public class MapStateTest {
         // Add cassandra cluster contact points
         clusterBuilder.addContactPoint(cassandra.getHost());
         clusterBuilder.withPort(cassandra.getNativeTransportPort());
+        clusterBuilder.withoutJMXReporting();
 
         // Build cluster and connect
         cluster = clusterBuilder.build();
