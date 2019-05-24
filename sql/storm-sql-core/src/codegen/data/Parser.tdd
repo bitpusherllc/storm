@@ -21,6 +21,7 @@
 
   # List of import statements.
   imports: [
+    "com.google.common.collect.*",
     "org.apache.calcite.sql.validate.*",
     "org.apache.calcite.util.*",
     "org.apache.storm.sql.parser.*",
@@ -38,6 +39,15 @@
     "JAR"
   ]
 
+  nonReservedKeywords: [
+    "NAME",
+    "SPACE",
+    "TIME"
+  ]
+
+  joinTypes: [
+  ]
+
   # List of methods for parsing custom SQL statements.
   statementParserMethods: [
     "SqlCreateTable()",
@@ -53,13 +63,10 @@
   dataTypeParserMethods: [
   ]
 
-  nonReservedKeywords: [
+  alterStatementParserMethods: [
   ]
 
   createStatementParserMethods: [
-  ]
-
-  alterStatementParserMethods: [
   ]
 
   dropStatementParserMethods: [

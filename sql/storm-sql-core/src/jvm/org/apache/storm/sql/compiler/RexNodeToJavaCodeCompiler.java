@@ -46,6 +46,7 @@ import org.apache.calcite.rex.RexBuilder;
 import org.apache.calcite.rex.RexNode;
 import org.apache.calcite.rex.RexProgram;
 import org.apache.calcite.rex.RexProgramBuilder;
+import org.apache.calcite.sql.validate.SqlConformanceEnum;
 import org.apache.calcite.util.BuiltInMethod;
 import org.apache.calcite.util.Pair;
 import org.apache.storm.sql.runtime.calcite.ExecutableExpression;
@@ -165,8 +166,8 @@ public class RexNodeToJavaCodeCompiler {
         final Expression root =
             Expressions.field(context, BuiltInMethod.CONTEXT_ROOT.field);
         final List<Expression> list =
-            RexToLixTranslator.translateProjects(program, javaTypeFactory, builder,
-                                                 null, root, inputGetter, correlates);
+            RexToLixTranslator.translateProjects(program, javaTypeFactory, SqlConformanceEnum.DEFAULT,
+                                                 builder, null, root, inputGetter, correlates);
         for (int i = 0; i < list.size(); i++) {
             builder.add(
                 Expressions.statement(

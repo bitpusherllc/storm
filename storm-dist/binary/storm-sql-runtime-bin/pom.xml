@@ -25,11 +25,6 @@
     <artifactId>storm-sql-runtime-bin</artifactId>
     <packaging>pom</packaging>
     
-    <properties>
-        <!-- Required downgrade by calcite-core 1.14.0 -->
-        <guava.version>16.0.1</guava.version>
-    </properties>
-    
     <dependencies>
         <dependency>
             <groupId>org.apache.storm</groupId>

@@ -27,11 +27,6 @@
 
     <artifactId>storm-sql-runtime</artifactId>
     
-    <properties>
-        <!-- Required downgrade by calcite-core 1.15.0 -->
-        <guava.version>16.0.1</guava.version>
-    </properties>
-
     <developers>
         <developer>
             <id>haohui</id>
