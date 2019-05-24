@@ -288,10 +288,11 @@
         <mockito.version>2.27.0</mockito.version>
         <zookeeper.version>3.5.5-nexia1</zookeeper.version>
         <jline.version>0.9.94</jline.version>
-        <hive.version>2.3.4</hive.version>
-        <hadoop.version>2.8.5</hadoop.version>
+        <jamon.version>2.4.1</jamon.version>
+        <hive.version>2.3.5</hive.version>
+        <hadoop.version>2.9.2</hadoop.version>
         <hdfs.version>${hadoop.version}</hdfs.version>
-        <hbase.version>2.1.3</hbase.version>
+        <hbase.version>2.1.4</hbase.version>
         <kryo.version>3.0.3</kryo.version>
         <servlet.version>4.0.1</servlet.version>
         <joda-time.version>2.10.2</joda-time.version>
@@ -995,6 +996,46 @@
             <dependency>
                 <groupId>io.dropwizard.metrics</groupId>
                 <artifactId>metrics-graphite</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-annotation</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-healthchecks</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-jersey2</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-jetty9</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-json</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-jvm</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-logback</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-servlets</artifactId>
                 <version>${metrics.version}</version>
             </dependency>
             <dependency>
